@@ -47,11 +47,7 @@ public class JsonHelperVersion1a {
                 e.printStackTrace();
             }
 
-            try {
-                recipesResponse.setCount(topLevelObject.getInt("count"));
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+            recipesResponse.setCount(topLevelObject.optInt("count", 0));
 
             try {
                 recipesResponse.setLimit(topLevelObject.getInt("limit"));
@@ -59,23 +55,11 @@ public class JsonHelperVersion1a {
                 e.printStackTrace();
             }
 
-            try {
-                recipesResponse.setOffset(topLevelObject.getInt("offset"));
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+            recipesResponse.setOffset(topLevelObject.optInt("offset", 0));
 
-            try {
-                recipesResponse.setUrl(topLevelObject.getString("url"));
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+            recipesResponse.setUrl(topLevelObject.optString("url", null));
 
-            try {
-                recipesResponse.setTotal(topLevelObject.getInt("total"));
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+            recipesResponse.setTotal(topLevelObject.optInt("total", 0));
 
             try {
                 JSONArray resultsJsonArray = topLevelObject.getJSONArray("results");
@@ -88,11 +72,8 @@ public class JsonHelperVersion1a {
                         Result result = new Result();
                         results.add(result);
 
-                        try {
-                            result.setId(resultJson.getString("id"));
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
+                        result.setId(resultJson.optString("id", null));
+
                         try {
                             result.setName(resultJson.getString("name"));
                         } catch (JSONException e) {

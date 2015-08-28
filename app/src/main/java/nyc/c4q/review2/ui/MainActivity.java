@@ -11,6 +11,7 @@ import nyc.c4q.review2.models.pearsonVersion1.JsonHelperVersion1a;
 import nyc.c4q.review2.models.pearsonVersion1.JsonHelperVersion1b;
 import nyc.c4q.review2.models.pearsonVersion1.RecipesResponse;
 import nyc.c4q.review2.models.pearsonVersion2.JsonHelperVersion2;
+import nyc.c4q.review2.models.pearsonVersion3.JsonHelperVersion3;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,15 +22,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RecipesResponse recipesResponse1 =
-                JsonHelperVersion1a.loadStaticJsonRaw(this, R.raw.pearson_recipes_chicken);
-        Log.d(TAG, "recipesResponse1:\n" + recipesResponse1);
-
-        RecipesResponse recipesResponse2 = JsonHelperVersion1b.loadStaticJsonRawUsingGson(this, R.raw.pearson_recipes_chicken);
+//        RecipesResponse recipesResponse1a =
+//                JsonHelperVersion1a.loadStaticJsonRaw(this, R.raw.pearson_recipes_chicken);
+//        Log.d(TAG, "recipesResponse1:\n" + recipesResponse1a);
+//
+//        RecipesResponse recipesResponse1b = JsonHelperVersion1b.loadStaticJsonRawUsingGson(this, R.raw.pearson_recipes_chicken);
+//        Log.d(TAG, "recipesResponse1b:\n" + recipesResponse1b);
+//
+        nyc.c4q.review2.models.pearsonVersion2.RecipesResponse recipesResponse2 = JsonHelperVersion2.loadStaticJsonRawUsingGson(this, R.raw.pearson_recipes_chicken);
         Log.d(TAG, "recipesResponse2:\n" + recipesResponse2);
 
-        nyc.c4q.review2.models.pearsonVersion2.RecipesResponse recipesResponse3 = JsonHelperVersion2.loadStaticJsonRawUsingGson(this, R.raw.pearson_recipes_chicken);
+        nyc.c4q.review2.models.pearsonVersion3.RecipesResponse recipesResponse3 = JsonHelperVersion3.loadStaticJsonRawUsingGson(this, R.raw.pearson_recipes_chicken);
         Log.d(TAG, "recipesResponse3:\n" + recipesResponse3);
+
+        String response2 = JsonHelperVersion2.convertToJsonUsingGson(recipesResponse2);
+        Log.d(TAG, "response2-json:" + response2);
+
+        String response3 = JsonHelperVersion3.convertToJsonUsingGson(recipesResponse3);
+        Log.d(TAG, "response3-json:" + response3);
 
     }
 
