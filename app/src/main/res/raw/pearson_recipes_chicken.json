@@ -1,0 +1,132 @@
+{
+  "kind": "pkm#recipes",
+  "url": "https://api.pearson.com/kitchen-manager/v1/recipes?name-contains=chicken",
+  "count": 6,
+  "offset": 0,
+  "limit": 10,
+  "total": 6,
+  "results": [
+    {
+      "name": "Chicken And Sausage Gumbo",
+      "id": "chicken-and-sausage-gumbo",
+      "url": "https://api.pearson.com/kitchen-manager/v1/recipes/chicken-and-sausage-gumbo",
+      "cuisine": "American: Cajun and Creole",
+      "cooking_method": "Broth",
+      "ingredients": [
+        "cayenne pepper",
+        "paprika",
+        "ground white pepper",
+        "ground black pepper",
+        "boneless skinless chicken breast",
+        "salt",
+        "all purpose flour",
+        "vegetable oil",
+        "onion",
+        "celery",
+        "green bell pepper",
+        "garlic",
+        "filÃ© powder",
+        "dried bay leaves",
+        "Chicken Stock",
+        "andouille",
+        "okra",
+        "long grain rice",
+        "green onion"
+      ],
+      "image": "https://api.pearson.com/kitchen-manager/v1/images/full/chicken_and_sausage_gumbo.jpg",
+      "thumb": "https://api.pearson.com/kitchen-manager/v1/images/thumbs/chicken_and_sausage_gumbo_thumb.jpg"
+    },
+    {
+      "name": "Chicken Curry Spread",
+      "id": "chicken-curry-spread",
+      "url": "https://api.pearson.com/kitchen-manager/v1/recipes/chicken-curry-spread",
+      "cuisine": "Indian",
+      "cooking_method": null,
+      "ingredients": [
+        "boneless skinless chicken breast",
+        "cream of coconut",
+        "mayonnaise",
+        "curry powder",
+        "Lemon Juice (fresh)",
+        "salt",
+        "ground white pepper"
+      ],
+      "image": "https://api.pearson.com/kitchen-manager/v1/images/full/curried_chicken_canapes.jpg",
+      "thumb": "https://api.pearson.com/kitchen-manager/v1/images/thumbs/curried_chicken_canapes_thumb.jpg"
+    },
+    {
+      "name": "Chicken Soup With Matzo Balls",
+      "id": "chicken-soup-with-matzo-balls",
+      "url": "https://api.pearson.com/kitchen-manager/v1/recipes/chicken-soup-with-matzo-balls",
+      "cuisine": "American: The Melting Pot",
+      "cooking_method": "Broth",
+      "ingredients": [
+        "whole 3 lb up chicken",
+        "Chicken Stock",
+        "Mirepoix",
+        "dried bay leaves",
+        "dried whole thyme",
+        "whole black pepper",
+        "fresh parsley",
+        "salt",
+        "ground black pepper",
+        "fresh parsley",
+        "Matzo Balls"
+      ],
+      "image": "https://api.pearson.com/kitchen-manager/v1/images/full/chicken_soup_w_matzo_balls.jpg",
+      "thumb": "https://api.pearson.com/kitchen-manager/v1/images/thumbs/chicken_soup_w_matzo_balls_thumb.jpg"
+    },
+    {
+      "name": "Chicken Stock",
+      "id": "chicken-stock",
+      "url": "https://api.pearson.com/kitchen-manager/v1/recipes/chicken-stock",
+      "cuisine": "N/A",
+      "cooking_method": "Simmering",
+      "ingredients": [
+        "chicken backs and necks",
+        "water",
+        "Mirepoix",
+        "dried bay leaves",
+        "dried whole thyme",
+        "whole black pepper",
+        "fresh parsley"
+      ],
+      "image": "https://api.pearson.com/kitchen-manager/v1/images/full/defaultrecipe.jpg",
+      "thumb": "https://api.pearson.com/kitchen-manager/v1/images/thumbs/defaultrecipe.jpg"
+    },
+    {
+      "name": "Chicken VeloutÃ©",
+      "id": "chicken-velouta",
+      "url": "https://api.pearson.com/kitchen-manager/v1/recipes/chicken-velouta",
+      "cuisine": "French",
+      "cooking_method": "Simmering",
+      "ingredients": [
+        "Clarified Butter",
+        "all purpose flour",
+        "Chicken Stock",
+        "salt",
+        "ground white pepper"
+      ],
+      "image": "https://api.pearson.com/kitchen-manager/v1/images/full/veloute.jpg",
+      "thumb": "https://api.pearson.com/kitchen-manager/v1/images/thumbs/veloute_thumb.jpg"
+    },
+    {
+      "name": "White Chicken Stock",
+      "id": "white-chicken-stock",
+      "url": "https://api.pearson.com/kitchen-manager/v1/recipes/white-chicken-stock",
+      "cuisine": "N/A",
+      "cooking_method": "Simmering",
+      "ingredients": [
+        "chicken backs and necks",
+        "water",
+        "Mirepoix",
+        "dried bay leaves",
+        "dried whole thyme",
+        "whole black pepper",
+        "fresh parsley"
+      ],
+      "image": "https://api.pearson.com/kitchen-manager/v1/images/full/defaultrecipe.jpg",
+      "thumb": "https://api.pearson.com/kitchen-manager/v1/images/thumbs/defaultrecipe.jpg"
+    }
+  ]
+}
