@@ -22,7 +22,10 @@ public class JsonHelperVersion3 {
     }
 
     public static String convertToJsonUsingGson(RecipesResponse recipesResponse) {
-        Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+        Gson gson = new GsonBuilder()
+                .excludeFieldsWithoutExposeAnnotation()
+                .setPrettyPrinting()
+                .create();
         String json =  gson.toJson(recipesResponse);
         return json;
     }
