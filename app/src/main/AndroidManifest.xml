@@ -1,21 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="nyc.c4q.review2" >
+    package="nyc.c4q.review2">
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".ui.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <activity
+            android:name=".ui.SecondActivity"
+            android:label="@string/title_activity_second">
+            <intent-filter>
+                <action android:name="android.intent.action.SecondActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".receivers.MyRegisteredBroadcastReceiver">
+            <intent-filter >
+                <action android:name="nyc.c4q.review2.broadcast.MY_CUSTOM_ACTION"/>
+
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".services.AppService"></service>
+
     </application>
+
+    <uses-permission android:name="android.permission.VIBRATE"></uses-permission>
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
 
 </manifest>
