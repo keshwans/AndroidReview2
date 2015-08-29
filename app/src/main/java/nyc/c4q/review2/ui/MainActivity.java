@@ -11,6 +11,7 @@ import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.os.SystemClock;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
@@ -28,6 +29,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 import nyc.c4q.review2.R;
+import nyc.c4q.review2.receivers.AlarmReceiver;
 import nyc.c4q.review2.services.AppService;
 import nyc.c4q.review2.receivers.MyRegisteredBroadcastReceiver;
 
@@ -108,8 +110,29 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         }
+        if (id == R.id.start_alrarm){
+            startAlarm();
+        }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    protected void startAlarm() {
+
+        //check if alarm already set to fire AlarmReceiver
+        // if not set then set it to wake up every 3 seconds.
+        // AlarmReceiver is setup to start the background service.
+
+        int AlarmIntentId = 102;
+        Intent alarmIntent = new Intent(MainActivity.this, AlarmReceiver.class);
+        PendingIntent prevPendingIntent = PendingIntent.getBroadcast(this, AlarmIntentId, alarmIntent, PendingIntent.FLAG_NO_CREATE);
+        boolean alarmRunning = (prevPendingIntent != null);
+
+        if (!alarmRunning) {
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(MainActivity.this, AlarmIntentId, alarmIntent, 0);
+            AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+            alarmManager.setRepeating( AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 3 * 1000, pendingIntent );
+        }
     }
 
     /**
