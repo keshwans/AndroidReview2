@@ -11,7 +11,7 @@ public class AppService extends Service {
 	private static final String TAG = AppService.class.getSimpleName();
 	public static final String SERVICE_EXTRA_MSG_KEY = "nyc.c4q.review2.saying";
 
-	private final IBinder mBinder = new LocalBinder();
+	private IBinder mBinder = null;
 	public static final String NOTIFICATION = "nyc.c4q.review2.services.AppService called";
 	
 	public class LocalBinder extends Binder {
@@ -19,12 +19,16 @@ public class AppService extends Service {
             // Return this instance of LocalService so clients can call public methods
             return AppService.this;
         }
+		public int addNumbers(int x, int y) {
+			return AppService.this.add(x, y);
+		}
     }
 	
 	@Override
 	 public void onCreate() {
 	        super.onCreate();
 	        Log.d(TAG, "AppService created");
+		 mBinder = new LocalBinder();
 
 	        Intent intent1 = new Intent(NOTIFICATION);
 			  // You can also include some extra data.
@@ -35,5 +39,9 @@ public class AppService extends Service {
 	public IBinder onBind(Intent intent) {
 		Log.d(AppService.class.getName(), "Bound");
 		return mBinder;
+	}
+
+	public int add(int x, int y) {
+		return x + y;
 	}
 }
