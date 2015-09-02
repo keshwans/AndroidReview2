@@ -160,6 +160,7 @@ public class MainActivity extends AppCompatActivity {
                                  Bundle savedInstanceState) {
 
             View fragmentView = inflater.inflate(R.layout.fragment_main, container, false);
+
             etText = (EditText) fragmentView.findViewById(R.id.et_time_sec);
 
             btnStart = (Button) fragmentView.findViewById(R.id.btn_start_timer);
@@ -232,14 +233,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         private void initializeView(View view) {
-
             btnStart.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
                     int timeoutSecs = 2;
                     try {
-                        timeoutSecs = Integer.parseInt(etText.getText().toString());
+                        String value = etText.getText().toString();
+                        timeoutSecs = Integer.parseInt(value); //Double.parseDouble(value) if a double was expected
                     } catch (Exception ignore) {
                     }
 
@@ -317,6 +318,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(myIntent);
                 }
             });
+
         }
 
 
